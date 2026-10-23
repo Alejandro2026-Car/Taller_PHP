@@ -1,0 +1,106 @@
+/* Configuración base de la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Tarjeta contenedora principal */
+.container {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 480px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Estilos del formulario y sus campos */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+input[type="text"] {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+a{
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Caja para destacar el resultado del acrónimo */
+.resultado-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #eef7fc;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.resultado-box h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.resultado-box p {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #2980b9;
+}
