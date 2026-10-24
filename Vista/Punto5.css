@@ -1,0 +1,113 @@
+/* Configuración base de la página */
+body {
+    background-image: url('../Recursos/Binario.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #1a202c;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.capa-desenfoque {
+  width: 400px;
+  height: 350px;
+  min-height: 90vh;
+  /* El truco del desenfoque: */
+  backdrop-filter: blur(8px); 
+  /* Opcional: añade un fondo semitransparente para dar contraste al texto */
+  background-color: rgba(87, 86, 86, 0.226); 
+  
+  /* Centrado del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+/* Tarjeta contenedora principal */
+.container {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #e5f4f8;
+    color: #1a202c;
+    margin: 0;
+    padding: 2rem;
+}
+
+.terminal-card {
+    background-color: #2d3748;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid #4a5568;
+}
+
+h2 {
+    color: #38b2ac;
+    margin-top: 0;
+    text-align: center;
+}
+/* Estilos del formulario y sus campos */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+label {
+    font-weight: 650;
+    font-size: 0.9rem;
+    color: #48bb78;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1a202c;
+    border: 1px solid #4a5568;
+    color: #48bb78;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+button {
+    width: 100%;
+    background-color: #38b2ac;
+    color: #1a202c;
+    border: none;
+    padding: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: #257776;
+}
+
+.binario-output {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #1a202c;
+    border: 1px dashed #38b2ac;
+    color: #48bb78;
+    text-align: center;
+    font-size: 1.3rem;
+    border-radius: 4px;
+}

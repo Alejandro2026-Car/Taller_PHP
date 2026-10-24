@@ -61,32 +61,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['numeros'])) {
 <head>
     <meta charset="UTF-8">
     <title>Punto 3 - Estadística</title>
-    <link rel="stylesheet" href="../Vista.css">
+    <link rel="stylesheet" href="../Vista/Punto3.css">
 </head>
 
 <body>
-    <div class="Back3">
+    <div class="capa-desenfoque">
+        <h1>Estadística</h1>
+    </div>
+    <div class="container">
         <h2>3. Promedio, Media (Mediana) y Moda</h2>
         <form action="" method="POST">
             <br>
             <label for="numeros">Ingrese los números (separados por comas):</label>
             <br>
             <input type="text" id="numeros" name="numeros" value="<?= htmlspecialchars($_POST['numeros'] ?? '') ?>" required placeholder="Ej: 10, 5, 8, 5, 20">
-            <div class="Regresar">
+            <div class="container">
                 <button type="submit">Calcular Estadísticas</button>
             </div>
-
+            <div class="container">
+                <button type="button">
+                    <a href="../index.php">Regresar</a>
+                </button>
+            </div>
         </form>
 
         <?php if ($promedio !== null): ?>
             <h3>Resultados:</h3>
-            <ul>
-                <li><strong>Promedio:</strong> <?= round($promedio, 2) ?></li>
-                <li><strong>Mediana (Media):</strong> <?= $mediana ?></li>
-                <li><strong>Moda:</strong> <?= implode(', ', $moda) ?></li>
-            </ul>
+            <div class="stats-grid">
+                <div class="stat-item"><span>Promedio</span><strong><?= round($promedio, 2) ?></strong></div>
+                <div class="stat-item"><span>Mediana</span><strong><?= $mediana ?></strong></div>
+                <div class="stat-item"><span>Moda</span><strong><?= implode(', ', $moda) ?></strong></div>
+            </div>
         <?php endif; ?>
-        <a href="../index.php">Regresar</a>
+
     </div>
 
 </body>

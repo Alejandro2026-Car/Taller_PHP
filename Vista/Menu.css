@@ -1,0 +1,70 @@
+body {
+    background-image: url('../Recursos/php.avif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.capa-desenfoque {
+  width: 400px;
+  height: 350px;
+  min-height: 90vh;
+  backdrop-filter: blur(8px); 
+  background-color: rgba(0, 0, 0, 0.3); 
+  
+  /* Centrado del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #d8dff0;
+    color: #2d3748;
+    padding: 1rem;
+}
+li {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+h1 {
+    color: #374553;
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+p {
+    background-color: #c0d2e4;
+    border-radius: 20px;
+    color: #374553;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+h2 {
+    color: #d0dae4;
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}

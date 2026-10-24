@@ -48,6 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['numero'])) {
 </head>
 
 <body>
+    <div class="capa-desenfoque">
+        <h1>Fibonacci y Factorial</h1>
+    </div>
+
     <div class="form-group">
         <h2>2. Sucesión de Fibonacci o Factorial</h2>
         <form action="" method="POST">
@@ -59,17 +63,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['numero'])) {
                 <option value="fibonacci" <?= (($_POST['operacion'] ?? '') === 'fibonacci') ? 'selected' : '' ?>>Fibonacci</option>
                 <option value="factorial" <?= (($_POST['operacion'] ?? '') === 'factorial') ? 'selected' : '' ?>>Factorial</option>
             </select>
-
-            <button type="submit">Calcular</button>
-            <a href="../index.php">Regresar</a>
+            <div class="form-group">
+                <button type="submit">Calcular</button>
+            </div>
+            <div class="form-group">
+                <button type="button">
+                    <a href="../index.php">Regresar</a>
+                </button>
+            </div>
         </form>
     </div>
-    <div class="resultado-box">
-        <?php if ($resultado !== null): ?>
-            <h3>Resultado:</h3>
-            <p><?= implode(' → ', $resultado) ?></p>
-        <?php endif; ?>
-        
+    <div class="form-group">
+        <div class="secuencia-resultado">
+            <?php if ($resultado !== null): ?>
+                <h3>Resultado:</h3>
+                <p><?= implode(' → ', $resultado) ?></p>
+            <?php endif; ?>
+
+        </div>
     </div>
 </body>
 

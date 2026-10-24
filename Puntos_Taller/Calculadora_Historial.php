@@ -69,56 +69,76 @@ $listaHistorial = Historial::obtener();
 <head>
     <meta charset="UTF-8">
     <title>Punto 7 - Calculadora con Historial</title>
-    <link rel="stylesheet" href="../Vista.css">
+    <link rel="stylesheet" href="../Vista/Punto7.css">
 </head>
 
 <body>
+    <div class="capa-desenfoque">
+        <h1>Calculadora con Historial</h1>
+    </div>
     <div class="container">
         <h2>7. Calculadora con Historial</h2>
         <form action="" method="POST">
-            <div class="form-group">
-                <label for="num1">Número 1:</label>
-                <input type="number" step="any" id="num1" name="num1" value="<?= htmlspecialchars($_POST['num1'] ?? '') ?>" required>
+            <div class="calc-inputs">
+                <div class="form-group">
+                    <label for="num1">Número 1:</label>
+                    <input type="number" step="any" id="num1" name="num1" value="<?= htmlspecialchars($_POST['num1'] ?? '') ?>" required>
+                </div>
+                <div class="form-group">
+                    <label for="operacion">Operación:</label>
+                    <select id="operacion" name="operacion">
+                        <option value="+" <?= (($_POST['operacion'] ?? '') === '+') ? 'selected' : '' ?>>Suma (+)</option>
+                        <option value="-" <?= (($_POST['operacion'] ?? '') === '-') ? 'selected' : '' ?>>Resta (-)</option>
+                        <option value="*" <?= (($_POST['operacion'] ?? '') === '*') ? 'selected' : '' ?>>Multiplicación (*)</option>
+                        <option value="/" <?= (($_POST['operacion'] ?? '') === '/') ? 'selected' : '' ?>>División (/)</option>
+                        <option value="%" <?= (($_POST['operacion'] ?? '') === '%') ? 'selected' : '' ?>>Porcentaje (%)</option>
+                    </select>
+                </div>
+                <div class="form-group>
+                    <label for="num2">Número 2:</label>
+                    <input type="number" step="any" id="num2" name="num2" value="<?= htmlspecialchars($_POST['num2'] ?? '') ?>" required>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="operacion">Operación:</label>
-                <select id="operacion" name="operacion">
-                    <option value="+" <?= (($_POST['operacion'] ?? '') === '+') ? 'selected' : '' ?>>Suma (+)</option>
-                    <option value="-" <?= (($_POST['operacion'] ?? '') === '-') ? 'selected' : '' ?>>Resta (-)</option>
-                    <option value="*" <?= (($_POST['operacion'] ?? '') === '*') ? 'selected' : '' ?>>Multiplicación (*)</option>
-                    <option value="/" <?= (($_POST['operacion'] ?? '') === '/') ? 'selected' : '' ?>>División (/)</option>
-                    <option value="%" <?= (($_POST['operacion'] ?? '') === '%') ? 'selected' : '' ?>>Porcentaje (%)</option>
-                </select>
+            <div class="container">
+                <div class="btn-group">
+                    <div class="container">
+                        <button type="submit" name="accion" value="calcular" class="btn-calcular">Calcular</button>
+                    </div>
+                    <div class="container">
+                        <button type="submit" name="accion" value="borrar_historial" class="btn-borrar">Borrar Historial</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="num2">Número 2:</label>
-                <input type="number" step="any" id="num2" name="num2" value="<?= htmlspecialchars($_POST['num2'] ?? '') ?>" required>
+            <div class="container">
+                <button type="button">
+                    <a href="../index.php">Regresar</a>
+                </button>
             </div>
-
-            <button type="submit" name="accion" value="calcular">Calcular</button>
-            <button type="submit" name="accion" value="borrar_historial">Borrar Historial</button>
         </form>
 
-        <?php if ($resultado !== null): ?>
-            <h3>Resultado Actual:</h3>
-            <p><strong><?= $resultado ?></strong></p>
-        <?php endif; ?>
-
-        <?php if ($error): ?>
-            <p style="color:red;"><?= htmlspecialchars($error) ?></p>
-        <?php endif; ?>
-
-        <h3>Historial de Operaciones</h3>
-        <ul>
-            <?php if (!empty($listaHistorial)): ?>
-                <?php foreach ($listaHistorial as $item): ?>
-                    <li><?= htmlspecialchars($item) ?></li>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <li>El historial está vacío.</li>
+    </div>
+    <div class="container">
+        <div class="resultado-box">
+            <?php if ($resultado !== null): ?>
+                <h3>Resultado Actual:</h3>
+                <p><strong><?= $resultado ?></strong></p>
             <?php endif; ?>
-        </ul>
-        <a href="../index.php">Regresar</a>
+
+            <?php if ($error): ?>
+                <p style="color:red;"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
+
+            <h3>Historial de Operaciones</h3>
+            <ul class="historial-lista">
+                <?php if (!empty($listaHistorial)): ?>
+                    <?php foreach ($listaHistorial as $item): ?>
+                        <li><?= htmlspecialchars($item) ?></li>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li>El historial está vacío.</li>
+                <?php endif; ?>
+            </ul>
+        </div>
     </div>
 </body>
 

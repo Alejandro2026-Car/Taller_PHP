@@ -1,0 +1,125 @@
+body {
+    background-image: url('../Recursos/Estadistica1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #102a43;;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.capa-desenfoque {
+  width: 400px;
+  height: 350px;
+  min-height: 90vh;
+  /* El truco del desenfoque: */
+  backdrop-filter: blur(8px); 
+  /* Opcional: añade un fondo semitransparente para dar contraste al texto */
+  background-color: rgba(0, 0, 0, 0.3); 
+  
+  /* Centrado del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.container {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #e5f4f8;
+    color: #2d3748;
+    margin: 0;
+    padding: 2rem;
+}
+/* Estilos del formulario y sus campos */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+.card-stats {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 520px;
+}
+
+h2 {
+    color: #102a43;
+    border-bottom: 2px solid #bcccdc;
+    padding-bottom: 0.5rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+input[type="text"] {
+    padding: 0.8rem;
+    border: 1px solid #bcccdc;
+    border-radius: 6px;
+}
+
+button {
+    background-color: #486581;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.2s;
+
+}
+
+button:hover {
+    background-color: #334e68;
+}
+
+/* Grilla de resultados estadísticos */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 0,8rem;
+}
+
+.stat-item {
+    background-color: #f0f4f8;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 0.8rem;
+    color: #627d98;
+    text-transform: uppercase;
+}
+
+.stat-item strong {
+    font-size: 1.2rem;
+    color: #102a43;
+}

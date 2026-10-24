@@ -33,6 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['frase'])) {
 </head>
 
 <body>
+    <div class="capa-desenfoque">
+        <h1>Acrónimos</h1>
+    </div>
     <div class="container">
         <h2>1. Convertir una frase en su acrónimo</h2>
 
@@ -40,17 +43,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['frase'])) {
         <form action="" method="POST">
             <label for="frase">Ingrese la frase:</label>
             <input type="text" id="frase" name="frase" value="<?= htmlspecialchars($_POST['frase'] ?? '') ?>" required placeholder="Ej: Portable Network Graphics">
-            <button type="submit">Generar Acrónimo</button>
-            <a href="../index.php">Regresar</a>
+            <div class="container">
+                <button type="submit">Generar Acrónimo</button>
+            </div>
+            <div class="container">
+                <button type="button">
+                    <a href="../index.php">Regresar</a>
+                </button>
+            </div>
         </form>
-        
+
     </div>
-    <div class="resultado-box">
-        <?php if ($resultado !== null): ?>
-            <h3>Resultado:</h3>
-            <p><strong>Acrónimo:</strong> <?= htmlspecialchars($resultado) ?></p>
-        <?php endif; ?>
-        
+    <div class="container">
+        <div class="resultado-box">
+            <?php if ($resultado !== null): ?>
+                <h3>Resultado:</h3>
+                <p><strong>Acrónimo:</strong> <?= htmlspecialchars($resultado) ?></p>
+            <?php endif; ?>
+
+        </div>
     </div>
 </body>
 

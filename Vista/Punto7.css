@@ -1,0 +1,193 @@
+/* Configuración base de la página */
+body {
+    background-image: url('../Recursos/Calculadora.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7fafc;
+    color: #2d3748;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.capa-desenfoque {
+  width: 400px;
+  height: 350px;
+  min-height: 90vh;
+  /* El truco del desenfoque: */
+  backdrop-filter: blur(8px); 
+  /* Opcional: añade un fondo semitransparente para dar contraste al texto */
+  background-color: rgba(43, 42, 42, 0.3); 
+  
+  /* Centrado del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+/* Tarjeta contenedora principal */
+.container {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f7fafc;
+    color: #2d3748;
+    margin: 0;
+    padding: 1rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+.calc-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 480px;
+}
+
+h2 {
+    color: #805ad5;
+    margin-top: 0;
+    text-align: center;
+}
+
+.calc-inputs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.calc-inputs input, .calc-inputs select {
+    padding: 0.7rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+}
+
+.calc-inputs input {
+    flex: 2;
+}
+
+.calc-inputs select {
+    flex: 1;
+}
+button {
+    background-color: #805ad5;;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-calcular {
+    background-color: #805ad5;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 6px;
+    flex: 2;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-calcular:hover {
+    background-color: #6b46c1;
+}
+
+.btn-borrar {
+    background-color:  #6b46c1;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 6px;
+    flex: 1;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-borrar:hover {
+    background-color:  #6b46c1;
+}
+
+.res-display {
+    background-color: #faf5ff;
+    border: 1px solid #e9d8fd;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #553c9a;
+    margin-bottom: 1.5rem;
+}
+
+/* Sección del historial de la sesión */
+.historial-seccion h3 {
+    font-size: 1rem;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.4rem;
+}
+
+.historial-lista {
+    list-style: none;
+    padding: 0;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.historial-lista li {
+    padding: 0.5rem 0.8rem;
+    background-color: #edf2f7;
+    margin-bottom: 0.3rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+.resultado-box {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #eef7fc;
+    border-left: 4px solid #805ad5;
+    border-radius: 4px;
+    text-align: center;
+    height: auto;
+}
+
+.resultado-box h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.resultado-box p {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #805ad5;
+}

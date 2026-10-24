@@ -1,0 +1,230 @@
+/* Configuración base de la página */
+body {
+    background-image: url('../Recursos/ArbolBinario.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #1f2937;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.capa-desenfoque {
+  width: 400px;
+  height: 350px;
+  min-height: 90vh;
+  /* El truco del desenfoque: */
+  backdrop-filter: blur(8px); 
+  /* Opcional: añade un fondo semitransparente para dar contraste al texto */
+  background-color: rgba(0, 0, 0, 0.3); 
+  
+  /* Centrado del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.container {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #d6d5e9;
+    color: #2d3748;
+    margin: 0;
+    padding: 1rem;
+}
+
+.tree-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h2 {
+    color: #4f46e5;
+    margin-top: 0;
+    text-align: center;
+}
+
+.input-row {
+    margin-bottom: 1rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0,8rem;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #4338ca;
+}
+
+/* Bloque <pre> para la jerarquía del árbol */
+.error-msg {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    border-radius: 4px;
+}
+/* Caja para destacar el resultado del acrónimo */
+.resultado-box {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #eef7fc;
+    border-left: 4px solid  #4f46e5;
+    border-radius: 4px;
+    text-align: center;
+    height: auto;
+}
+
+.resultado-box h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.resultado-box p {
+    margin: 0;
+    font-size: 1.25rem;
+    color:  #4f46e5;
+}
+
+.arbol-visual {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    overflow-x: auto;
+}
+.arbol-visual ul {
+    padding-top: 20px; 
+    position: relative;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-left: 0;
+}
+.arbol-visual li {
+    float: left; 
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+}
+/* Conectores con líneas CSS */
+.arbol-visual li::before, .arbol-visual li::after {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    right: 50%;
+    border-top: 2px solid #cbd5e1;
+    width: 50%; 
+    height: 20px;
+}
+
+.arbol-visual li::after {
+    right: auto; 
+    left: 50%;
+    border-left: 2px solid #cbd5e1;
+}
+
+.arbol-visual li:only-child::after, .arbol-visual li:only-child::before {
+    display: none;
+}
+
+.arbol-visual li:only-child { 
+    padding-top: 0;
+}
+
+.arbol-visual li:first-child::before, .arbol-visual li:last-child::after {
+    border: none;
+}
+
+.arbol-visual li:last-child::before {
+    border-right: 2px solid #cbd5e1;
+    border-radius: 0 5px 0 0;
+}
+
+.arbol-visual li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+.arbol-visual ul ul::before {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    left: 50%;
+    border-left: 2px solid #cbd5e1;
+    width: 0; 
+    height: 20px;
+}
+
+/* Estilo para los Nodos (Círculos) */
+.nodo-valor {
+    border: 2px solid #4f46e5;
+    background-color: #eef2ff;
+    color: #3730a3;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    display: inline-block;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 2;
+}
+
+/* Nodos vacíos para mantener simetría visual */
+.nodo-valor.vacio {
+    border: 1px dashed #cbd5e1;
+    background-color: #f8fafc;
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+

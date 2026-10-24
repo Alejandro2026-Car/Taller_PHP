@@ -1,24 +1,46 @@
 /* Configuración base de la página */
 body {
+    background-image: url('../Recursos/Acronimo2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
 }
-
+.capa-desenfoque {
+  width: 400px;
+  height: 350px;
+  min-height: 90vh;
+  /* El truco del desenfoque: */
+  backdrop-filter: blur(8px); 
+  /* Opcional: añade un fondo semitransparente para dar contraste al texto */
+  background-color: rgba(0, 0, 0, 0.3); 
+  
+  /* Centrado del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 /* Tarjeta contenedora principal */
 .container {
-    background: #ffffff;
-    padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    width: 100%;
+    box-shadow: 0 8px 24px rgba(112, 112, 112, 0.08);
     max-width: 480px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #e5f4f8;
+    color: #2d3748;
+    margin: 0;
+    padding: 2rem;
 }
 
 h2 {
@@ -66,18 +88,6 @@ button {
     cursor: pointer;
     transition: background-color 0.2s;
 }
-a{
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    text-align: center;
-}
 
 button:hover {
     background-color: #2980b9;
@@ -85,12 +95,14 @@ button:hover {
 
 /* Caja para destacar el resultado del acrónimo */
 .resultado-box {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     margin-top: 2rem;
     padding: 1rem;
     background-color: #eef7fc;
     border-left: 4px solid #3498db;
     border-radius: 4px;
     text-align: center;
+    height: auto;
 }
 
 .resultado-box h3 {
